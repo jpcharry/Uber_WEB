@@ -1,0 +1,72 @@
+<ion-content [fullscreen]="true" class="login-bg">
+  <div class="login-layout">
+    <aside class="auth-brand">
+      <div class="brand-logo"><span class="brand-emblem">↗</span><span>RUTA<span class="brand-dot">.</span></span></div>
+      <div class="brand-copy">
+        <div class="eyebrow">MOVILIDAD CONECTADA · IONIC + ANGULAR</div>
+        <h1>Tu ciudad.<br>Tu camino.<br><span>Tu ritmo.</span></h1>
+        <p>Conectamos pasajeros y conductores en una experiencia de transporte inteligente.</p>
+        <div class="brand-pills"><span><ion-icon name="car-sport-outline"></ion-icon> Pasajeros</span><span><ion-icon name="navigate-outline"></ion-icon> Conductores</span><span><ion-icon name="shield-checkmark-outline"></ion-icon> Gestión</span></div>
+      </div>
+      <div class="auth-foot">RUTA / APLICACIÓN DE MOVILIDAD · PROYECTO ACADÉMICO</div>
+    </aside>
+
+    <main class="auth-main">
+      <div class="login-box">
+        <div class="mobile-logo">↗ RUTA<span>.</span></div>
+        <div class="api-status" [ngClass]="health">
+          <span class="status-dot"></span>
+          <span *ngIf="health === 'checking'">Comprobando conexión con la API...</span>
+          <span *ngIf="health === 'ok'">La API está respondiendo correctamente.</span>
+          <span *ngIf="health === 'db'">La API está en línea, pero PostgreSQL del servidor no responde. Los accesos pueden fallar.</span>
+          <span *ngIf="health === 'offline'">No fue posible validar la API. Comprueba la red y el servicio.</span>
+        </div>
+        <div class="form-heading">
+          <div class="eyebrow dark">{{ page === 'login' ? 'BIENVENIDO DE NUEVO' : 'ÚNETE A RUTA' }}</div>
+          <h2>{{ page === 'login' ? 'Iniciar sesión' : 'Crear una cuenta' }}</h2>
+          <p>{{ page === 'login' ? 'Ingresa a tu espacio de movilidad.' : 'Regístrate como pasajero o conductor.' }}</p>
+        </div>
+        <div class="error" *ngIf="message"><ion-icon name="warning-outline"></ion-icon>{{ message }}</div>
+
+        <form *ngIf="page === 'login'" (ngSubmit)="login()" class="form-fields">
+          <ion-input label="Correo o teléfono" labelPlacement="stacked" fill="outline" autocomplete="username" name="login" [(ngModel)]="loginForm.login" placeholder="tu@correo.com" required></ion-input>
+          <ion-input label="Contraseña" labelPlacement="stacked" fill="outline" type="password" name="password" [(ngModel)]="loginForm.password" required></ion-input>
+          <ion-button expand="block" type="submit" [disabled]="busy" class="primary-btn">
+            <ion-spinner *ngIf="busy" name="crescent"></ion-spinner>
+            <span *ngIf="!busy">Entrar a RUTA</span>
+            <ion-icon *ngIf="!busy" name="arrow-forward-outline" slot="end"></ion-icon>
+          </ion-button>
+          <div class="switch-note"><span>¿No tienes cuenta?</span><button type="button" (click)="setPage('register')">Regístrate</button></div>
+        </form>
+
+        <form *ngIf="page === 'register'" (ngSubmit)="register()" class="form-fields">
+          <ion-segment [(ngModel)]="registerForm.role" name="role">
+            <ion-segment-button value="client"><ion-label>Pasajero</ion-label></ion-segment-button>
+            <ion-segment-button value="driver"><ion-label>Conductor</ion-label></ion-segment-button>
+          </ion-segment>
+          <ion-input label="Nombre completo" labelPlacement="stacked" fill="outline" name="name" [(ngModel)]="registerForm.name" required></ion-input>
+          <ion-input label="Correo electrónico" labelPlacement="stacked" fill="outline" type="email" name="email" [(ngModel)]="registerForm.email" required></ion-input>
+          <ion-input label="Teléfono" labelPlacement="stacked" fill="outline" type="tel" name="phone" [(ngModel)]="registerForm.phone" required></ion-input>
+          <ion-input label="Contraseña (mínimo 8 caracteres)" labelPlacement="stacked" fill="outline" type="password" name="password" [(ngModel)]="registerForm.password" required></ion-input>
+          <ng-container *ngIf="registerForm.role === 'driver'">
+            <div class="mini-heading">Datos del conductor y vehículo</div>
+            <ion-input label="Número de licencia" labelPlacement="stacked" fill="outline" name="license" [(ngModel)]="registerForm.license_number"></ion-input>
+            <div class="form-pair">
+              <ion-input label="Placa" labelPlacement="stacked" fill="outline" name="plate" [(ngModel)]="registerForm.plate"></ion-input>
+              <ion-input label="Marca" labelPlacement="stacked" fill="outline" name="brand" [(ngModel)]="registerForm.brand"></ion-input>
+            </div>
+            <ion-input label="Modelo" labelPlacement="stacked" fill="outline" name="model" [(ngModel)]="registerForm.model"></ion-input>
+            <div class="form-pair">
+              <ion-input label="Año" labelPlacement="stacked" fill="outline" type="number" name="year" [(ngModel)]="registerForm.year"></ion-input>
+              <ion-input label="Capacidad" labelPlacement="stacked" fill="outline" type="number" name="capacity" [(ngModel)]="registerForm.capacity"></ion-input>
+            </div>
+            <ion-input label="Color" labelPlacement="stacked" fill="outline" name="color" [(ngModel)]="registerForm.color"></ion-input>
+            <ion-note color="medium">La cuenta del conductor requiere aprobación del administrador antes de aceptar viajes.</ion-note>
+          </ng-container>
+          <ion-button expand="block" type="submit" [disabled]="busy" class="primary-btn"><ion-spinner *ngIf="busy" name="crescent"></ion-spinner><span *ngIf="!busy">Crear cuenta</span></ion-button>
+          <div class="switch-note"><span>¿Ya tienes cuenta?</span><button type="button" (click)="setPage('login')">Inicia sesión</button></div>
+        </form>
+      </div>
+    </main>
+  </div>
+</ion-content>

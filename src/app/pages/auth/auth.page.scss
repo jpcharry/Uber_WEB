@@ -1,0 +1,42 @@
+:host { display: block; --ion-background-color: #fff; }
+.login-bg { --background: #fff; }
+.login-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 100%; }
+.auth-brand { padding: 52px 8% 38px; color: #fff; display:flex; flex-direction:column; justify-content:space-between; min-height:100vh; background:radial-gradient(circle at 90% 55%, #193b46 0%, #112b3a 25%, #0c1f32 60%); overflow:hidden; position:relative; }
+.auth-brand::after { content:''; position:absolute; width:620px; height:620px; border-radius:50%; border:1px solid rgba(122,226,195,.14); left:65%; top:18%; pointer-events:none; }
+.brand-logo { display:flex; gap:14px; align-items:center; font-size:28px; font-weight:800; letter-spacing:-1.8px; position:relative; z-index:1; }
+.brand-dot,.mobile-logo span { color:#7fe0bc; }
+.brand-emblem { background:#274454; padding:4px 11px 8px; font-size:28px; border-radius:13px; line-height:1.2; color:#80e1bd; }
+.brand-copy { position:relative; z-index:1; max-width:590px; padding:72px 0; }
+.eyebrow { font-size:11px; font-weight:800; letter-spacing:3px; color:#8de4ca; }
+.eyebrow.dark { color:#738396; letter-spacing:2px; }
+.brand-copy h1 { font-size:clamp(44px,5.1vw,88px); line-height:1.05; margin:46px 0 32px; letter-spacing:-4px; font-weight:850; }
+.brand-copy h1 span { color:#7fe0bc; }
+.brand-copy p { font-size:18px; line-height:1.85; color:#c4d4e0; max-width:500px; }
+.brand-pills {display:flex;flex-wrap:wrap;gap:12px;margin-top:56px;}
+.brand-pills span {display:flex;align-items:center;gap:9px;padding:10px 15px;border:1px solid rgba(255,255,255,.16);border-radius:999px;font-size:12px;color:#d2e7ea;}
+.brand-pills ion-icon { color:#83e4c3; }
+.auth-foot {color:#91aec3;font-size:11px;letter-spacing:1px;position:relative;z-index:1;}
+.auth-main {display:flex;justify-content:center;align-items:center;padding:54px 30px;}
+.login-box {width:min(100%,490px);}
+.mobile-logo {display:none;}
+.form-heading {margin:32px 0;}
+.form-heading h2 {font-size:40px;letter-spacing:-1.8px;line-height:1.1;font-weight:780;color:#102136;margin:14px 0;}
+.form-heading p {color:#7c8da2;margin:0;font-size:15px;}
+.form-fields {display:flex;flex-direction:column;gap:15px;}
+.form-fields ion-input {--border-color:#dbe4ee;--border-radius:11px;--padding-start:15px;--highlight-color-focused:#1ea988;min-height:62px;}
+.form-fields ion-segment {background:#eef4f5;border-radius:10px;}
+.form-fields ion-segment-button {--indicator-color:#102136;--color:#627388;--color-checked:#fff;min-height:45px;}
+.form-fields ion-select {--highlight-color-focused:#1ea988;}
+.form-fields ion-note {line-height:1.5;}
+.primary-btn {--background:#102136;--background-hover:#1f354e;--border-radius:12px;height:51px;margin-top:5px;text-transform:none;font-weight:750;letter-spacing:0;}
+.switch-note {display:flex;justify-content:center;gap:8px;margin-top:15px;color:#8595a8;font-size:13px;}
+.switch-note button {background:none;border:0;color:#078f70;font-weight:750;cursor:pointer;}
+.error {display:flex;align-items:flex-start;gap:10px;margin-bottom:18px;color:#8e251f;background:#fff1ed;border:1px solid #ffd7c8;border-radius:12px;padding:13px;font-size:13px;line-height:1.5;}
+.error ion-icon {flex-shrink:0;font-size:18px;}
+.api-status {display:flex;gap:9px;align-items:flex-start;padding:12px 14px;border-radius:11px;background:#f3f7fa;color:#687e93;font-size:12px;line-height:1.55;}
+.api-status.ok {color:#107451;background:#ebfaf4;}
+.api-status.db,.api-status.offline {color:#8a561e;background:#fff2df;}
+.status-dot {height:8px;width:8px;border-radius:50%;background:currentColor;flex-shrink:0;margin-top:5px;}
+.mini-heading {font-size:12px;font-weight:750;letter-spacing:1px;text-transform:uppercase;margin:9px 0 0;color:#526a80;}
+.form-pair {display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:850px) {.login-layout{grid-template-columns:1fr;}.auth-brand{display:none;}.auth-main{min-height:100vh;align-items:flex-start;padding:28px 22px 65px;}.login-box{max-width:540px;}.mobile-logo{display:block;font-size:27px;font-weight:850;color:#102136;margin-bottom:23px;}.form-heading h2{font-size:34px;}}

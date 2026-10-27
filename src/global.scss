@@ -1,0 +1,20 @@
+@import '@ionic/angular/css/core.css';
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/structure.css';
+@import '@ionic/angular/css/typography.css';
+@import '@ionic/angular/css/display.css';
+@import 'leaflet/dist/leaflet.css';
+:root {
+  --ion-color-primary:#0e9879; --ion-color-primary-rgb:14,152,121;
+  --ion-color-primary-contrast:#fff; --ion-color-primary-contrast-rgb:255,255,255;
+  --ion-color-primary-shade:#0c866a; --ion-color-primary-tint:#26a38a;
+  --ion-background-color:#f5f8fa; --ion-text-color:#11263c;
+  --ion-font-family:'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+* { box-sizing:border-box; }
+body { margin:0; }
+ion-content { --background:#f5f8fa; }
+ion-button {text-transform:none;letter-spacing:0;font-weight:700;}
+ion-input,ion-textarea,ion-select {--highlight-color-focused:#098f75;}
+.leaflet-container {font-family:inherit;}
+button {font-family:inherit;}

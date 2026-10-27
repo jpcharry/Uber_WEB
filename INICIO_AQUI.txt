@@ -1,0 +1,14 @@
+RUTA - NUEVA VERSION IONIC + ANGULAR
+
+1. Instala Node.js 22 (compatible con Angular 21).
+2. Abre ESTA carpeta en VS Code.
+3. Ejecuta: npm install
+4. Ejecuta: npm start
+5. Abre: http://127.0.0.1:8100
+
+La API Laravel es REMOTA y se configura en proxy.conf.json.
+La base de datos PostgreSQL no se instala en este proyecto.
+El ZIP NO incluye node_modules: npm install los descarga.
+Si el backend no conecta con PostgreSQL, se mostrara un aviso.
+
+NO uses py servidor_demo.py en esta version: ahora es una app real Ionic-Angular.

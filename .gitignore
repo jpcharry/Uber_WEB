@@ -1,0 +1,15 @@
+/node_modules
+/www
+/.angular
+/dist
+/out-tsc
+/.idea
+/.vscode/*
+!/.vscode/extensions.json
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+/android
+/ios
