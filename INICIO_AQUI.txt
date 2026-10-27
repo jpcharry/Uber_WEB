@@ -1,0 +1,18 @@
+RUTA — FRONTEND CONECTADO A LA API DEL PROFESOR
+=================================================
+
+Paso 1: En Windows, abre una terminal dentro de esta carpeta.
+Paso 2: Ejecuta  py servidor_demo.py  (o python servidor_demo.py)
+Paso 3: Abre http://127.0.0.1:5500
+
+Tambien puedes ejecutarlo como Laravel: composer install, copiar .env.example a .env,
+php artisan key:generate, php artisan serve.
+
+API externa: http://20.20.1.157:8000/api
+
+ATENCION: Segun la captura compartida, en este momento el servidor del profesor
+responde con PostgreSQL Connection refused 127.0.0.1:5432, base uber_db.
+Es el ADMINISTRADOR DEL SERVIDOR quien debe arreglarlo. El frontend
+no puede resolver ese error.
+
+Leer README.md para mas detalles y limitaciones de los endpoints documentados.
