@@ -1,6 +1,6 @@
 {
   "/api/**": {
-    "target": "http://20.20.1.157:8000",
+    "target": "http://20.20.1.51:8000",
     "secure": false,
     "changeOrigin": true,
     "timeout": 20000,
